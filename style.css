@@ -1,4 +1,5 @@
 body{
+height:5000px;
     font-family:"Raleway","Helvetica","Arial","sans-sefir";
     margin: 0;
 }
@@ -13,12 +14,23 @@ a{
 }
 
 .header{
+    padding: 20px;
+    height: calc(100vh - 40px);
     display:flex;
+    flex-direction: column;
+    background-image: url("https://opencages.com.ua/_nuxt/img/homepage.0151b74.jpg.webp");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: 50%;
+    background-attachment: fixed;
+}
+.nav{
+    position: absolute
+    width: calc(100%-40px);
+    z-index: 1;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    height: 50px;
-    background-color: black;
+    display:flex;
 }
 
 .nav-list{
@@ -62,13 +74,16 @@ a{
     background-color: #dd3d53;
     border-radius: 3px;
     transition: all .25s ease;
+    font-size: 12;
+    font-weight:bold;
 }
 .nav-list li:last-of-type{
     padding-right: 0;
 }
 
 .heart-icon{
-    margin-right: 5px;
+    margin-right: 10px;
+    font-size: 14px;
 }
 .nav-list li:last-of-type a svg{
     width: 1em;
@@ -79,8 +94,69 @@ a{
 .logo-img{
     height: 40px;
 }
-.logo-link{
-    display: flex;
-    height: 100%;
-    align-items: center;
+.logo-container{
+    line-height: 1.5;
 }
+header::after{
+    background: #0c3632;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: .85;
+    position: absolute;
+    top: 0;
+    transition: all .25s ease;
+    width: 100%;
+}
+@media screen and (min-width: 992px){
+    .nav-toggle{
+        display:none;
+    }
+}
+@media screen and (max-width: 992px){
+    .nav-list{
+    display:none;
+    }
+}
+.nav-toggle{
+    font-size: 2rem;
+    color: #fff;
+}
+.burger-icon{
+    display: flex;
+    font-size: inherit;
+    height: 1em;
+    vertical-align: -0.125em;
+    cursor : pointer;
+}
+.header-content{
+    margin: auto;
+    position:relative;
+    z-index:1;
+}
+.header-content-title{
+    font-size:56px;
+    color: white;
+    line-height: 84px;
+}
+.header-content-title-green{
+    color: #17baaa;
+}
+.header-content-button{
+    background: #17baaa;
+    color:white;
+    align-items: center;
+    border: 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    font-size: 14px;
+    font-size: .875rem;
+    font-weight: 700;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 40px;
+    outline: none;
+    padding: 0 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all .25s ease;
